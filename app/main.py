@@ -23,6 +23,8 @@ async def like(background_tasks: BackgroundTasks, hashtag: str, limit: int = 10)
 
 
 @app.get("/status")
-async def status_get():
-    info = await status.get()
-    return info
+async def status_get(background_tasks: BackgroundTasks):
+    background_tasks.add_task(
+        status.get
+    )
+    return f"""info: request accespted."""

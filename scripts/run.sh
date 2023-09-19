@@ -1,3 +1,5 @@
 #!/bin/bash
 set -a && source ./.env && set +a
-uvicorn app.main:app --reload
+source ./.venv/bin/activate && \
+uvicorn app.main:app --reload & \
+cloudflared tunnel run ubuntu-server-1 &

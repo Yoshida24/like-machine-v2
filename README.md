@@ -16,20 +16,32 @@ depends on:
 - pip: 22.3.1
 - GNU Make: 3.81
 
-support:
-- OS: M1 Macbook Air Ventura 13.4.1
+supported OS:
+- M1 Macbook Air Ventura 13.4.1
+- Ubuntu 22.04.3
 
+```
+$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 22.04.3 LTS
+Release:	22.04
+Codename:	jammy
+```
 
-## Gettig Started
+## Getting Started
+
+### Install API on Ubuntu Server
 First of all, install VSCode recommended extensions. This includes Linter, Formatter, and so on. Recommendation settings is written on `.vscode/extensions.json`.
 
 Then, install dependencies:
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
+apt update && apt upgrade -y && apt autoremove -y && apt autoclean -y
 pip3 install --upgrade pip
-pip3 install -r requirements.txt
-playwright install
+pip install --no-cache-dir --upgrade -r /src/requirements.txt
+playwright install && playwright install-deps
 cp .env.sample .env
 ```
 

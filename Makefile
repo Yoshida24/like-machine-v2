@@ -1,3 +1,8 @@
+.PHONY: setup
+setup:
+	@echo "Setup..."
+	sh scripts/setup.sh
+
 .PHONY: run
 run:
 	@echo "Running..."

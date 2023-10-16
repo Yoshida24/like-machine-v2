@@ -18,7 +18,7 @@ depends on:
 
 supported OS:
 - M1 Macbook Air Ventura 13.4.1
-- Ubuntu 22.04.3
+- Ubuntu 22.04.3 on Raspberry Pi 4 Model B Rev 1.2 (2GB)
 
 ```
 $ lsb_release -a
@@ -32,17 +32,19 @@ Codename:	jammy
 ## Getting Started
 
 ### Install API on Ubuntu Server
-First of all, install VSCode recommended extensions. This includes Linter, Formatter, and so on. Recommendation settings is written on `.vscode/extensions.json`.
+First of all, `update` apt and `pip`
+
+```bash
+apt update && apt upgrade -y && apt autoremove -y && apt autoclean -y
+pip install --upgrade pip
+```
+
+install VSCode recommended extensions. This includes Linter, Formatter, and so on. Recommendation settings is written on `.vscode/extensions.json`.
 
 Then, install dependencies:
 
 ```bash
-python3 -m venv .venv && source .venv/bin/activate
-apt update && apt upgrade -y && apt autoremove -y && apt autoclean -y
-pip3 install --upgrade pip
-pip install --no-cache-dir --upgrade -r /src/requirements.txt
-playwright install && playwright install-deps
-cp .env.sample .env
+make setup
 ```
 
 Now you can run script:

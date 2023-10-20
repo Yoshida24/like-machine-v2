@@ -1,3 +1,3 @@
 #!/bin/bash
-set -a && sh ./.env && set +a
+set -a && . ./.env && set +a
 echo "Implement your Test!"

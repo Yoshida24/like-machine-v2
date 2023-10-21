@@ -8,6 +8,11 @@ run:
 	@echo "Running..."
 	sh scripts/run.sh
 
+.PHONY: serve
+serve:
+	@echo "Serving..."
+	sh scripts/serve.sh
+
 .PHONY: test
 test:
 	@echo "Testing..."

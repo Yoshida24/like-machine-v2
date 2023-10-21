@@ -17,14 +17,12 @@ async def like(background_tasks: BackgroundTasks, hashtag: str, limit: int = 10)
         limit=limit,
     )
 
-    return f"""info: request accespted.
+    return f"""info: request accepted.
     hashtag={hashtag}
     limit={limit}"""
 
 
 @app.get("/status")
 async def status_get(background_tasks: BackgroundTasks):
-    background_tasks.add_task(
-        status.get
-    )
-    return f"""info: request accespted."""
+    background_tasks.add_task(status.get)
+    return f"""info: request accepted."""

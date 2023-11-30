@@ -2,12 +2,7 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=686856069&skip_quickstart=true)
 
-Preset for development on Python using venv.
-
-**included:**
-- Lint and Format
-- Task runner
-- Env support
+Auto Like and Notify LINE.
 
 ## Usage
 
